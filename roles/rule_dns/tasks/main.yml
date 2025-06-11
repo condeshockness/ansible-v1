@@ -5,7 +5,7 @@
     interface: lan
     ipprotocol: inet
     protocol: udp
-    source: dns_int
+    source: any
     destination: any:53
     after: 'Allow proxies out'
     state: present
