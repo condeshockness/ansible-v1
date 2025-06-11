@@ -7,7 +7,7 @@
     protocol: udp
     source: any
     destination: any:53
-    after: 'Allow proxies out'
+    #after: 'Allow proxies out'
     state: present
 
   register: dns_result
