@@ -3,7 +3,7 @@
     name: 'Allow Internal DNS traffic out'
     action: pass
     interface: escola
-    ipprotocol: inet
+    #ipprotocol: inet
     protocol: udp
     source: any
     destination: any:53
