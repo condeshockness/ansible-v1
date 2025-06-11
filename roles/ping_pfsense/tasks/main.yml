@@ -1,0 +1,8 @@
+
+- name: Ping site
+  ping:
+
+
+- name: Ping result
+  debug:
+    msg: "{{ ping_result.stdout_lines }}"
