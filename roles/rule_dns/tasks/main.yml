@@ -1,19 +1,20 @@
 
-- name: Allow Internal DNS traffic out
-  
-  action: pass
-  interface: lan
-  ipprotocol: inet
-  protocol: udp
-  source: dns_int
-  destination: any
-  destination_port: 53
-  after: 'Allow proxies out'
-  state: present
+- name: "Add Internal DNS out rule"
+  pfsense_rule:
+    name: 'Allow Internal DNS traffic out'
+    action: pass
+    interface: lan
+    ipprotocol: inet
+    protocol: udp
+    source: dns_int
+    destination: any
+    destination_port: 53
+    after: 'Allow proxies out'
+    state: present
 
-  register: ping_result
+  register: dns_result
 
 
-- name: Ping result
+- name: dns result
   debug:
-    msg: "{{ ping_result.stdout_lines }}"
+    msg: "{{ dns_result.stdout_lines }}"
