@@ -1,7 +1,7 @@
 
 - name: Ping site
   shell: |
-    ping 8.8.8.8
+    ping -c 1 google.com
   register: ping_result
 
 
