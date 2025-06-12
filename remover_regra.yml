@@ -2,4 +2,4 @@
   become: false
   gather_facts: false
   roles:
-  - rule_dns
+  - remove_rule
