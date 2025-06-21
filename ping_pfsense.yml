@@ -1,4 +1,4 @@
-- hosts: site
+- hosts: pfsense
   gather_facts: False
   roles:
   - ping_pfsense

@@ -1,4 +1,4 @@
-- hosts: site
+- hosts: pfsense
   become: false
   gather_facts: false
   roles:

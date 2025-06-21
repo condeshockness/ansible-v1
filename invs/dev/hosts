@@ -1,4 +1,8 @@
 [site]
-#localhost ansible_connection=local
-#192.168.100.10
-10.7.2.91
+localhost ansible_connection=local
+
+[pfsense]
+10.7.1.202
+
+[windows]
+10.0.50.50
