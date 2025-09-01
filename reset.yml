@@ -1,0 +1,21 @@
+---
+- name: Reboot Allied Telesis device
+  hosts: allied # Replace with your inventory group or hostname
+  gather_facts: false
+  connection: network_cli # Specify the connection type for network devices
+
+  tasks:
+    - name: Schedule immediate reboot
+      alliedtelesis.awplus.awplus_command:
+        commands:
+          - command: reboot
+            prompt: "Are you sure you want to reboot the system? (y/n)" # Prompt for confirmation if present
+            answer: "y" # Provide the answer to the prompt
+      # You may need to add a wait_for_connection task here
+      # if you want Ansible to wait for the device to come back online
+      # before proceeding with subsequent tasks in the same playbook.
+      # Example:
+      # - name: Wait for device to come back online
+      #   wait_for_connection:
+      #     delay: 10 # seconds to wait before first attempt
+      #     timeout: 300 # seconds to wait for connection to establish
