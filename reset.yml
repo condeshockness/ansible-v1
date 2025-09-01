@@ -1,3 +1,5 @@
 - hosts: allied # Replace with your inventory group or hostname
   gather_facts: false
   connection: network_cli # Specify the connection type for network devices
+  roles:
+  - reset
