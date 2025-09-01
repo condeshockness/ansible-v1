@@ -1,0 +1,6 @@
+- name: Schedule immediate reboot
+  alliedtelesis.awplus.awplus_command:
+    commands:
+      - command: reboot
+        prompt: "Are you sure you want to reboot the system? (y/n)" # Prompt for confirmation if present
+        answer: "y" # Provide the answer to the prompt
